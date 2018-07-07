@@ -1,0 +1,39 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+ul,ol{list-style: none}
+a{text-decoration: none}
+img{width: 100%;height: 100%}
+body{font-family: 'PingFang SC','STHeitiSC-Light','Helvetica',arial,sans-serif;}
+*{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+html,body{ 
+  width:100%; 
+  height:100%; 
+  overflow: scroll;
+}
+::-webkit-scrollbar{
+  display:none;
+}
+.fixed:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+ 
+.fixed:before{
+    content: "";
+    display: table;
+}
+.hide{
+    display: none;
+}
+
+.overlay{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.7);
+  z-index: 999;
+}
