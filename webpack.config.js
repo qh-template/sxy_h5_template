@@ -28,7 +28,7 @@ module.exports = {
     // 就会造成资源路径引用错误（打包后的资源引用路径是以url-loader中定义的outputPath为开头的）
     // 例：css中 background: url(img/be68719a9e63469fb846d7e1dec92b81.png) no-repeat;
     // 这个背景图就会从css的目录中去查找 img/be68719a9e63469fb846d7e1dec92b81.png
-    publicPath: '/' // 打包生成的html中引用的地址会包括主机（绝对路径）
+    // publicPath: `/` // 打包生成的html中引用的地址会包括主机（绝对路径）
   },
   resolve: {
     extensions: ['.js', '.vue', '.json', '.styl', '.css', '.scss', '.less'],
@@ -61,7 +61,8 @@ module.exports = {
         }, {
           loader: 'postcss-loader',
           options: { sourceMap: true }
-        }]
+        }],
+        publicPath: '../../'
       })
     }, {
       // 该loader用于打包图片或文件
@@ -89,7 +90,8 @@ module.exports = {
           options: { sourceMap: true }
         }, {
           loader: 'less-loader'
-        }]
+        }],
+        publicPath: '../../'
       })
     }, {
       test: /\.styl$/,
@@ -103,7 +105,8 @@ module.exports = {
           options: { sourceMap: true }
         }, {
           loader: 'stylus-loader'
-        }]
+        }],
+        publicPath: '../../'
       })
     },
     {
@@ -117,7 +120,8 @@ module.exports = {
           options: { sourceMap: true }
         }, {
           loader: 'sass-loader'
-        }]
+        }],
+        publicPath: '../../'
       })
     }, {
       test: /\.(jsx|js)$/,

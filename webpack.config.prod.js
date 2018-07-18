@@ -16,6 +16,6 @@ module.exports = merge(mainConfig, {
     new UglifyWebpackPlugin(), // 压缩js
     new CleanWebpackPlugin([folderName], {
       root: path.resolve(__dirname, '../../')
-    }), // 每次打包会先清空dist目录
+    }) // 每次打包会先清空dist目录
   ]
 })
