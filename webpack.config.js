@@ -73,7 +73,8 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 8192,
-          outputPath: 'static/img/' // 路径为dist下（根据output.path）
+          outputPath: 'static/img/', // 路径为dist下（根据output.path）
+          publicPath: `http://qiniu.cdn.sxy7.com/${folderName}/static/img/`
         }
       }]
     }, {
