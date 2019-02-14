@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const PurifyCssPlugin = require('purifycss-webpack')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-
+const env = process.env.NODE_ENV.trim()
 function currFile() {
   let index = __dirname.lastIndexOf('\\')
   return __dirname.slice(index + 1)
@@ -74,7 +74,9 @@ module.exports = {
         options: {
           limit: 8192,
           outputPath: 'static/img/', // 路径为dist下（根据output.path）
-          publicPath: `http://qiniu.cdn.sxy7.com/${folderName}/static/img/`
+          publicPath: env === 'production'
+            ? `http://qiniu.cdn.sxy7.com/${folderName}/static/img/`
+            : '/static/img/'
         }
       }]
     }, {
